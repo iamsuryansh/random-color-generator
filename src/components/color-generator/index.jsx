@@ -41,16 +41,20 @@ export default function RandomColor() {
       }}
     >
       <button
-        className="bg-white px-5 py-5 mt-10 mx-5 font-semibold rounded text-xl"
+        className={`px-5 py-5 mt-10 mx-5 font-semibold text-xl rounded bg-white ${
+            typeOfColor === "hex" ? "scale-125": "scale-100"
+          }`}
         onClick={() => setTypeOfColor("hex")}
       >
-        Create HEX Color
+        HEX Color
       </button>
       <button
-        className="bg-white px-5 py-5 mt-10 mx-5 font-semibold rounded text-xl"
+        className={`px-5 py-5 mt-10 mx-5 font-semibold text-xl rounded bg-white ${
+            typeOfColor === "rgb" ? "scale-125": "scale-100"
+          }`}
         onClick={() => setTypeOfColor("rgb")}
       >
-        Create RGB Color
+        RGB Color
       </button>
       <button
         className="bg-white px-5 py-5 mt-10 mx-5 font-semibold rounded text-xl"
@@ -60,7 +64,7 @@ export default function RandomColor() {
             : handleCreateRandomRgbColor
         }
       >
-        Generate Random Color
+        Generate {typeOfColor} Color
       </button>
       <div className="flex justify-center items-center text-white text-6xl mt-40 flex-col gap-4">
         <h3>{typeOfColor === "rgb" ? "RGB Color" : "HEX Color"}</h3>
